@@ -32,19 +32,10 @@ section {
     transition: all 300ms ease;
 }
 
-
-input, textarea {
-    width: 100%;
-    background-color: #242424;
-    color: white;
-    outline: none;
-    border: 1px solid #c0c4cc;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    height: 40px;
-    transition: all 300ms ease;
+.orange__text {
+    color: #FF6F61;
 }
+
 
 textarea {
     resize: vertical;
@@ -58,17 +49,10 @@ label {
 
 }
 
-input:hover, textarea:hover {
-    border-color: #dcdfe6;
-}
-
-input:focus, textarea:focus {
-    border-color: #009B77;
-}
 
 .container {
     width: 100%;
-    padding: 50px 0;
+    padding: 10px 0;
 }
 
 .row {
@@ -126,8 +110,8 @@ input:focus, textarea:focus {
 
 #mv-logo {
     filter: invert(79%) sepia(60%) saturate(5237%) hue-rotate(319deg) brightness(98%) contrast(109%);
-    width: 75px;
-    height: 75px;
+    width: 45px;
+    height: 50px;
 }
 
 
@@ -136,9 +120,9 @@ nav {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-   padding: 8px 20px;
+   padding: 30px 20px;
 }
 
 
@@ -155,4 +139,110 @@ nav {
     font-size: 20px;
     color: #242424;
     font-weight: 700;
+}
+
+.logo__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo__title {
+    font-size: 30px;
+    padding-left: 20px;
+}
+
+.fa-searchengin {
+    font-size: 20px;
+}
+
+.first__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 48px;
+    max-width: 730px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.secondary__title {
+    letter-spacing: 0.14px;
+    padding-top: 20px;
+    font-style: bold;
+    font-size: 30px;
+}
+
+.input__and__button {
+    display: flex;
+    max-width: 600px;
+    width: 100%;
+    margin: 40px;
+}
+
+input {
+    width: 100%;
+    padding: 20px 192px 20px 32px;
+    border-width: 1px;
+    border-radius: 100px;
+}
+
+.search__btn {
+    margin-left: 10px;
+    width: 200px;
+    border-radius: 20px;
+    background-color: #FF6F61;
+    border: none;
+    color: white;
+    font-size: 25px;
+}
+
+/* Featured Movies*/
+
+.featured__title {
+    text-align: center;
+}
+
+.category__title {
+    margin-top: 24px;
+}
+
+.poster__container {
+    margin-top: 20px;
+    display: flex;
+}
+
+.poster { 
+padding-right: 25px;
+max-width: 20%;
+
+}
+
+.poster__img {
+    width: 100%;
+    height: 300px;
+}
+
+.movie__title {
+    text-align: center;
+}
+.year {
+    text-align: center;
+}
+
+.bottom__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prop__btn {
+    text-align: center;
+    margin-top: 58px;
+    margin-bottom: 58px;
+    cursor: pointer;
 }
