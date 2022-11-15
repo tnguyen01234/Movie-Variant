@@ -13,133 +13,224 @@
     <script src="index.js"></script>
   </head>
   <body>
-    <section id="landing-page">
-      <nav>
-        <div class="logo__container">
+    <nav>
+      <div class="logo__container">
         <figure>
-          <img
-            id="mv-logo"
-            class="click"
-            src="./assets/MV Logo Black.png"
-            alt=""
-          />
+          <img class="mv__logo click" src="./assets/MV Logo Black.png" alt="" />
         </figure>
         <h1 class="logo__title">Movie Variant</h1>
-    </div>
-        <ul class="nav__link--list">
-          <li class="nav__link" onclick="toggleModal()">
-            <a
-              href="#landing-page"
-              class="nav__link--anchor link__hover--effect link__hover--effect--green"
-              >Home</a
-            >
-          </li>
-          <li class="nav__link">
-            <a
-              href="#featured__movies"
-              class="nav__link--anchor link__hover--effect link__hover--effect--green"
-              >Movies</a
-            >
-          </li>
-          <li class="nav__link" onclick="toggleModal()">
-            <a
-              href="#"
-              class="nav__link--anchor link__hover--effect link__hover--effect--green"
-              >
-              <i class="fa fa-video"></i></a
-            >
-          </li>
-          <li class="nav__link click">
-            <a
-              href="#"
-              class="nav__link--anchor link__hover--effect link__hover--effect--green"
-              ><i class="fas fa-adjust" onclick="toggleContrast()"></i
-            ></a>
-          </li>
-        </ul>
-      </nav>
+      </div>
+      <ul class="nav__link--list">
+        <li class="nav__link" onclick="toggleModal()">
+          <a
+            href="#landing-page"
+            class="nav__link--anchor link__hover--effect link__hover--effect--green"
+            >Home</a
+          >
+        </li>
+        <li class="nav__link">
+          <a
+            href="#featured__movies"
+            class="nav__link--anchor link__hover--effect link__hover--effect--green"
+            >Movies</a
+          >
+        </li>
+        <li class="nav__link" onclick="toggleModal()">
+          <a
+            href="#"
+            class="nav__link--anchor link__hover--effect link__hover--effect--green"
+          >
+            <i class="fa fa-video"></i
+          ></a>
+        </li>
+        <li class="nav__link click">
+          <a
+            href="#"
+            class="nav__link--anchor link__hover--effect link__hover--effect--green"
+            ><i class="fas fa-adjust" onclick="toggleContrast()"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <section id="landing-page">
       <div class="container">
         <div class="row first__row">
-            <h1 class="title">Australia's <span class="orange__text">best</span> movie <span class="orange__text">streaming platform </span></h1>
-            <h2 class="secondary__title">FIND YOUR <span class="orange__text">FAVOURITE </span>MOVIE</h2>
-            <div class="input__and__button">
-              <input type="text" placeholder="Movie Title, ID, Genre" />
-              <button class="search__btn">
-                <i class="fa fa-video"></i>
-              </button>
-            </div>
+          <h1 class="title">
+            Australia's <span class="orange__text">best</span> movie
+            <span class="orange__text">streaming platform </span>
+          </h1>
+          <h2 class="secondary__title">
+            FIND YOUR <span class="orange__text">FAVOURITE </span>MOVIE
+          </h2>
+          <div class="input__and__button">
+            <input type="text" placeholder="Movie Title, ID, Genre" />
+            <button class="search__btn">
+              <i class="fa fa-video"></i>
+            </button>
+          </div>
         </div>
+      </div>
+      <div class="video__container">
+        <video autoplay muted loop id="myVideo">
+          <source
+            src="./assets/The Avengers (Marvel) Born For This.mp4"
+            type="video/mp4"
+          />
+        </video>
       </div>
     </section>
     <section id="featured__movies">
-<div class="container">
-  <div class="row">
-    <h1 class="featured__title orange__text">Featured Movie</h1>
-    <div class="movie__category">
-      <h3 class="category__title">Action</h3>
-      <div class="poster__container">
-        <div class="poster">
-          <img src="https://m.media-amazon.com/images/M/MV5BMDg2YzI0ODctYjliMy00NTU0LTkxODYtYTNkNjQwMzVmOTcxXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SX300.jpg" alt="" class="poster__img">
-          <p class="movie__title">John Wick 3 "Parabellum"</p>
-          <p class="year">2019</p>
-        </div>
-        <div class="poster">
-          <img src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg" alt="" class="poster__img">
-          <p class="movie__title">Avengers: Endgame</p>
-          <p class="year">2019</p>
-        </div>
-        <div class="poster">
-          <img src="https://m.media-amazon.com/images/M/MV5BNTliYjlkNDQtMjFlNS00NjgzLWFmMWEtYmM2Mzc2Zjg3ZjEyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg" alt="" class="poster__img">
-          <p class="movie__title">Shang-Chi and the Legend of the Ten Rings</p>
-          <p class="year">2021</p>
-        </div>
-        <div class="poster">
-          <img src="https://m.media-amazon.com/images/M/MV5BMjI0NmFkYzEtNzU2YS00NTg5LWIwYmMtNmQ1MTU0OGJjOTMxXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_SX300.jpg" alt="" class="poster__img">
-          <p class="movie__title">F9: The Fast Saga</p>
-          <p class="year">2021</p>
-        </div>
-        <div class="poster">
-          <img src="https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg" alt="" class="poster__img">
-          <p class="movie__title">Top Gun: Maverick</p>
-          <p class="year">2022</p>
+      <div class="container">
+        <div class="row">
+          <h1 class="featured__title orange__text">Featured Movie</h1>
+          <div class="movie__category">
+            <h3 class="category__title">Action</h3>
+            <div class="poster__container">
+              <div class="poster">
+                <img
+                  src="https://m.media-amazon.com/images/M/MV5BMDg2YzI0ODctYjliMy00NTU0LTkxODYtYTNkNjQwMzVmOTcxXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SX300.jpg"
+                  alt=""
+                  class="poster__img"
+                />
+                <p class="movie__title">John Wick 3 "Parabellum"</p>
+                <p class="year">2019</p>
+              </div>
+              <div class="poster">
+                <img
+                  src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg"
+                  alt=""
+                  class="poster__img"
+                />
+                <p class="movie__title">Avengers: Endgame</p>
+                <p class="year">2019</p>
+              </div>
+              <div class="poster">
+                <img
+                  src="https://m.media-amazon.com/images/M/MV5BNTliYjlkNDQtMjFlNS00NjgzLWFmMWEtYmM2Mzc2Zjg3ZjEyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg"
+                  alt=""
+                  class="poster__img"
+                />
+                <p class="movie__title">
+                  Shang-Chi and the Legend of the Ten Rings
+                </p>
+                <p class="year">2021</p>
+              </div>
+              <div class="poster">
+                <img
+                  src="https://m.media-amazon.com/images/M/MV5BMjI0NmFkYzEtNzU2YS00NTg5LWIwYmMtNmQ1MTU0OGJjOTMxXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_SX300.jpg"
+                  alt=""
+                  class="poster__img"
+                />
+                <p class="movie__title">F9: The Fast Saga</p>
+                <p class="year">2021</p>
+              </div>
+              <div class="poster">
+                <img
+                  src="https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg"
+                  alt=""
+                  class="poster__img"
+                />
+                <p class="movie__title">Top Gun: Maverick</p>
+                <p class="year">2022</p>
+              </div>
+            </div>
+          </div>
+          <div class="movie__category">
+            <h3 class="category__title">Comedy</h3>
+            <div class="poster__container">
+              <div class="poster">
+                <img
+                  src="https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg"
+                  alt=""
+                  class="poster__img"
+                />
+                <p class="movie__title">The Wolf of Wall Street</p>
+                <p class="year">2013</p>
+              </div>
+              <div class="poster">
+                <img
+                  src="https://m.media-amazon.com/images/M/MV5BMTcwNzAxMDU1M15BMl5BanBnXkFtZTgwNDE2NTU1MTE@._V1_SX300.jpg"
+                  alt=""
+                  class="poster__img"
+                />
+                <p class="movie__title">22 Jump Street</p>
+                <p class="year">2014</p>
+              </div>
+              <div class="poster">
+                <img
+                  src="https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_SX300.jpg"
+                  alt=""
+                  class="poster__img"
+                />
+                <p class="movie__title">Thor: Ragnarok</p>
+                <p class="year">2017</p>
+              </div>
+              <div class="poster">
+                <img
+                  src="https://m.media-amazon.com/images/M/MV5BMDkzNmRhNTMtZDI4NC00Zjg1LTgxM2QtMjYxZDQ3OWJlMDRlXkEyXkFqcGdeQXVyNTU5MjkzMTU@._V1_SX300.jpg"
+                  alt=""
+                  class="poster__img"
+                />
+                <p class="movie__title">Deadpool 2</p>
+                <p class="year">2018</p>
+              </div>
+              <div class="poster">
+                <img
+                  src="https://m.media-amazon.com/images/M/MV5BMTM2MTM4MzY2OV5BMl5BanBnXkFtZTcwNjQ3NzI4NA@@._V1_SX300.jpg"
+                  alt=""
+                  class="poster__img"
+                />
+                <p class="movie__title">The Hangover Part II</p>
+                <p class="year">2011</p>
+              </div>
+            </div>
+          </div>
+          <div class="bottom__btn">
+            <h1 class="prop__btn">More Movies</h1>
+            <figure class="bottom__logo">
+              <img
+                class="mv__logo click"
+                src="./assets/MV Logo Black.png"
+                alt=""
+              />
+            </figure>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="movie__category">
-      <h3 class="category__title">Comedy</h3>
-      <div class="poster__container">
-        <div class="poster">
-          <img src="https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg" alt="" class="poster__img">
-          <p class="movie__title">The Wolf of Wall Street</p>
-          <p class="year">2013</p>
-        </div>
-        <div class="poster">
-          <img src="https://m.media-amazon.com/images/M/MV5BMTcwNzAxMDU1M15BMl5BanBnXkFtZTgwNDE2NTU1MTE@._V1_SX300.jpg" alt="" class="poster__img">
-          <p class="movie__title">22 Jump Street</p>
-          <p class="year">2014</p>
-        </div>
-        <div class="poster">
-          <img src="https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_SX300.jpg" alt="" class="poster__img">
-          <p class="movie__title">Thor: Ragnarok</p>
-          <p class="year">2017</p>
-        </div>
-        <div class="poster">
-          <img src="https://m.media-amazon.com/images/M/MV5BMDkzNmRhNTMtZDI4NC00Zjg1LTgxM2QtMjYxZDQ3OWJlMDRlXkEyXkFqcGdeQXVyNTU5MjkzMTU@._V1_SX300.jpg" alt="" class="poster__img">
-          <p class="movie__title">Deadpool 2</p>
-          <p class="year">2018</p>
-        </div>
-        <div class="poster">
-          <img src="https://m.media-amazon.com/images/M/MV5BMTM2MTM4MzY2OV5BMl5BanBnXkFtZTcwNjQ3NzI4NA@@._V1_SX300.jpg" alt="" class="poster__img">
-          <p class="movie__title">The Hangover Part II</p>
-          <p class="year">2011</p>
-        </div>
-      </div>
-    </div>
-    <div class="bottom__btn">
-<h1 class="prop__btn">More Movies</h1>
-</div>
-  </div>
-</div>
     </section>
+    <footer>
+      <div class="footer__container">
+        <div class="row footer__row">
+          <figure>
+            <img class="mv__logo" src="./assets/MV Logo Black.png" alt="" />
+          </figure>
+          <div class="footer__social--list">
+            <a
+              href="#"
+              class="footer__social--link link__hover--effect link__hover--effect--green"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="footer__social--link link__hover--effect link__hover--effect--green"
+              target="_blank"
+              >Movies</a
+            >
+            <a
+              href="#"
+              class="footer__social--link link__hover--effect link__hover--effect--green"
+              onclick="toggleModal()"
+              >Search</a
+            >
+            <a
+              href="#"
+              class="footer__social--link link__hover--effect link__hover--effect--green"
+              >Contact</a
+            >
+          </div>
+          <div class="footer__copyright">Copyright © Movie Variant</div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
