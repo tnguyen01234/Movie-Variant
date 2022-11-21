@@ -1,15 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="index.js"></script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <nav>
+      <div class="logo__container">
+        <figure>
+          <img class="mv__logo click" src="./assets/MV Logo Black.png" alt="" />
+        </figure>
+        <h1 class="logo__title">Movie Variant</h1>
+      </div>
+      <ul class="nav__link--list">
+        <li class="nav__link" onclick="toggleModal()">
+          <a
+            href="#landing-page"
+            class="nav__link--anchor link__hover--effect link__hover--effect--green"
+            >Home</a
+          >
+        </li>
+        <li class="nav__link">
+          <a
+            href="#featured__movies"
+            class="nav__link--anchor link__hover--effect link__hover--effect--green"
+            >Movies</a
+          >
+        </li>
+        <li class="nav__link" onclick="toggleModal()">
+          <a
+            href="#"
+            class="nav__link--anchor link__hover--effect link__hover--effect--green"
+          >
+            <i class="fa fa-video"></i
+          ></a>
+        </li>
+        <li class="nav__link click">
+          <a
+            href="#"
+            class="nav__link--anchor link__hover--effect link__hover--effect--green"
+            ><i class="fas fa-adjust" onclick="toggleContrast()"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <div id="searched__movie">
+      <div class="container search__container">
+        <div class="row row__search">
+          <span class="search__result--title">Search Result</span>
+          <div class="poster__container">
+            <div class="poster" onclick="toggleModal(); getMovieOne()">
+              <img
+                src="https://m.media-amazon.com/images/M/MV5BMDg2YzI0ODctYjliMy00NTU0LTkxODYtYTNkNjQwMzVmOTcxXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SX300.jpg"
+                alt=""
+                class="poster__img"
+              />
+              <p class="movie__title">John Wick 3 "Parabellum"</p>
+              <p class="year">2019</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

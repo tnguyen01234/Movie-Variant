@@ -10,7 +10,7 @@
       src="https://kit.fontawesome.com/c8e4d183c2.js"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
   </head>
   <body>
     <nav>
@@ -21,7 +21,7 @@
         <h1 class="logo__title">Movie Variant</h1>
       </div>
       <ul class="nav__link--list">
-        <li class="nav__link" onclick="toggleModal()">
+        <li class="nav__link">
           <a
             href="#landing-page"
             class="nav__link--anchor link__hover--effect link__hover--effect--green"
@@ -35,7 +35,7 @@
             >Movies</a
           >
         </li>
-        <li class="nav__link" onclick="toggleModal()">
+        <li class="nav__link">
           <a
             href="#"
             class="nav__link--anchor link__hover--effect link__hover--effect--green"
@@ -53,9 +53,82 @@
       </ul>
     </nav>
     <section id="landing-page">
+      <div class="modal">
+        <div class="modal__half modal__left">
+          <div class="poster__wrapper">
+            <figure>
+              <img class="modal__img" id="poster" src="" alt="" />
+            </figure>
+          </div>
+          <h1 class="movie__title" id="title"></h1>
+          <p class="year__modal" id="year"></p>
+          <p></p>
+          <p class="genre__wrapper"><b>Genre</b>: <span id="genre"></span></p>
+          <button class="watch__now--btn">
+            <i class="fa fa-play"></i>
+          </button>
+          <h4 class="runtime__wrapper">Runtime: <span id="runtime"></span></h4>
+        </div>
+        <div class="modal__half modal__right">
+          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+          <div class="description__wrapper">
+            <div class="synopsis__wrapper wrapper">
+              <h1 class="synopsis">Synopsis</h1>
+              <p id="plot">=</p>
+            </div>
+            <div class="director__actor">
+              <div class="director__wrapper wrapper">
+                <h1 class="director__title">Director</h1>
+                <h4 id="director"></h4>
+              </div>
+              <div class="actors__wrapper wrapper">
+                <h1 class="actors__title">Actors</h1>
+                <h4 id="actors"></h4>
+              </div>
+            </div>
+            <div class="awards__boxoffice">
+              <div class="awards__wrapper wrapper">
+                <h1 class="awards__title">Awards</h1>
+                <h4 id="awards"></h4>
+              </div>
+              <div class="boxoffice__wrapper wrapper">
+                <h1 class="boxoffice__title">BoxOffice</h1>
+                <h4 id="boxoffice"></h4>
+              </div>
+            </div>
+          </div>
+          <div id="critics">
+            <h1 class="orange__text">Critics</h1>
+            <div class="critics__container">
+              <div class="critics__wrapper">
+                <img
+                  class="critics__img"
+                  src="./assets/mc_fb_og-1.png"
+                  alt=""
+                />
+                <h1 class="metascore__total">
+                  <span id="metascore"></span> Out of 100
+                </h1>
+              </div>
+              <div class="critics__wrapper">
+                <img class="critics__img" src="./assets/Imbd logo.png" alt="" />
+                <div class="imdb__container">
+                  <i class="fa fa-star"></i>
+                  <div class="rating__number">
+                    <h1 class="imdb__total">
+                      <span id="imdbRating"></span><span class="grey">/10</span>
+                    </h1>
+                    <p id="imdbVotes"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="container">
         <div class="row first__row">
-          <h1 class="title">
+          <h1 class="website__title">
             Australia's <span class="orange__text">best</span> movie
             <span class="orange__text">streaming platform </span>
           </h1>
@@ -86,7 +159,7 @@
           <div class="movie__category">
             <h3 class="category__title">Action</h3>
             <div class="poster__container">
-              <div class="poster">
+              <div class="poster" onclick="toggleModal(); getMovieOne()">
                 <img
                   src="https://m.media-amazon.com/images/M/MV5BMDg2YzI0ODctYjliMy00NTU0LTkxODYtYTNkNjQwMzVmOTcxXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SX300.jpg"
                   alt=""
@@ -95,7 +168,7 @@
                 <p class="movie__title">John Wick 3 "Parabellum"</p>
                 <p class="year">2019</p>
               </div>
-              <div class="poster">
+              <div class="poster" onclick="toggleModal(); getMovieTwo()">
                 <img
                   src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg"
                   alt=""
@@ -104,7 +177,7 @@
                 <p class="movie__title">Avengers: Endgame</p>
                 <p class="year">2019</p>
               </div>
-              <div class="poster">
+              <div class="poster" onclick="toggleModal(); getMovieThree()">
                 <img
                   src="https://m.media-amazon.com/images/M/MV5BNTliYjlkNDQtMjFlNS00NjgzLWFmMWEtYmM2Mzc2Zjg3ZjEyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg"
                   alt=""
@@ -115,7 +188,7 @@
                 </p>
                 <p class="year">2021</p>
               </div>
-              <div class="poster">
+              <div class="poster" onclick="toggleModal(); getMovieFour()">
                 <img
                   src="https://m.media-amazon.com/images/M/MV5BMjI0NmFkYzEtNzU2YS00NTg5LWIwYmMtNmQ1MTU0OGJjOTMxXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_SX300.jpg"
                   alt=""
@@ -124,7 +197,7 @@
                 <p class="movie__title">F9: The Fast Saga</p>
                 <p class="year">2021</p>
               </div>
-              <div class="poster">
+              <div class="poster" onclick="toggleModal(); getMovieFive()">
                 <img
                   src="https://m.media-amazon.com/images/M/MV5BZWYzOGEwNTgtNWU3NS00ZTQ0LWJkODUtMmVhMjIwMjA1ZmQwXkEyXkFqcGdeQXVyMjkwOTAyMDU@._V1_SX300.jpg"
                   alt=""
@@ -138,7 +211,7 @@
           <div class="movie__category">
             <h3 class="category__title">Comedy</h3>
             <div class="poster__container">
-              <div class="poster">
+              <div class="poster" onclick="toggleModal(); getMovieSix()">
                 <img
                   src="https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg"
                   alt=""
@@ -147,7 +220,7 @@
                 <p class="movie__title">The Wolf of Wall Street</p>
                 <p class="year">2013</p>
               </div>
-              <div class="poster">
+              <div class="poster" onclick="toggleModal(); getMovieSeven()">
                 <img
                   src="https://m.media-amazon.com/images/M/MV5BMTcwNzAxMDU1M15BMl5BanBnXkFtZTgwNDE2NTU1MTE@._V1_SX300.jpg"
                   alt=""
@@ -156,7 +229,7 @@
                 <p class="movie__title">22 Jump Street</p>
                 <p class="year">2014</p>
               </div>
-              <div class="poster">
+              <div class="poster" onclick="toggleModal(); getMovieEight()">
                 <img
                   src="https://m.media-amazon.com/images/M/MV5BMjMyNDkzMzI1OF5BMl5BanBnXkFtZTgwODcxODg5MjI@._V1_SX300.jpg"
                   alt=""
@@ -165,7 +238,7 @@
                 <p class="movie__title">Thor: Ragnarok</p>
                 <p class="year">2017</p>
               </div>
-              <div class="poster">
+              <div class="poster" onclick="toggleModal(); getMovieNine()">
                 <img
                   src="https://m.media-amazon.com/images/M/MV5BMDkzNmRhNTMtZDI4NC00Zjg1LTgxM2QtMjYxZDQ3OWJlMDRlXkEyXkFqcGdeQXVyNTU5MjkzMTU@._V1_SX300.jpg"
                   alt=""
@@ -174,7 +247,7 @@
                 <p class="movie__title">Deadpool 2</p>
                 <p class="year">2018</p>
               </div>
-              <div class="poster">
+              <div class="poster" onclick="toggleModal(); getMovieTen()">
                 <img
                   src="https://m.media-amazon.com/images/M/MV5BMTM2MTM4MzY2OV5BMl5BanBnXkFtZTcwNjQ3NzI4NA@@._V1_SX300.jpg"
                   alt=""
@@ -187,9 +260,9 @@
           </div>
           <div class="bottom__btn">
             <h1 class="prop__btn">More Movies</h1>
-            <figure class="bottom__logo">
+            <figure class="bottom__logo--wrapper">
               <img
-                class="mv__logo click"
+                class="mv__logo bottom__logo click"
                 src="./assets/MV Logo Black.png"
                 alt=""
               />
@@ -202,7 +275,11 @@
       <div class="footer__container">
         <div class="row footer__row">
           <figure>
-            <img class="mv__logo" src="./assets/MV Logo Black.png" alt="" />
+            <img
+              class="mv__logo footer__logo"
+              src="./assets/MV Logo Black.png"
+              alt=""
+            />
           </figure>
           <div class="footer__social--list">
             <a
@@ -219,7 +296,6 @@
             <a
               href="#"
               class="footer__social--link link__hover--effect link__hover--effect--green"
-              onclick="toggleModal()"
               >Search</a
             >
             <a
