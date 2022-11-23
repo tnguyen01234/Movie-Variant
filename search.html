@@ -10,7 +10,8 @@
       src="https://kit.fontawesome.com/c8e4d183c2.js"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
+    <script src="search.js" defer></script>
   </head>
   <body>
     <nav>
@@ -52,20 +53,98 @@
         </li>
       </ul>
     </nav>
+    <div class="modal">
+      <div class="modal__half modal__left">
+        <div class="poster__wrapper">
+          <figure>
+            <img class="modal__img" id="poster" src="" alt="" />
+          </figure>
+        </div>
+        <h1 class="movie__title" id="title"></h1>
+        <p class="year__modal" id="year"></p>
+        <p></p>
+        <p class="genre__wrapper"><b>Genre</b>: <span id="genre"></span></p>
+        <button class="watch__now--btn">
+          <i class="fa fa-play"></i>
+        </button>
+        <h4 class="runtime__wrapper">Runtime: <span id="runtime"></span></h4>
+      </div>
+      <div class="modal__half modal__right">
+        <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+        <div class="description__wrapper">
+          <div class="synopsis__wrapper wrapper">
+            <h1 class="synopsis">Synopsis</h1>
+            <p id="plot">=</p>
+          </div>
+          <div class="director__actor">
+            <div class="director__wrapper wrapper">
+              <h1 class="director__title">Director</h1>
+              <h4 id="director"></h4>
+            </div>
+            <div class="actors__wrapper wrapper">
+              <h1 class="actors__title">Actors</h1>
+              <h4 id="actors"></h4>
+            </div>
+          </div>
+          <div class="awards__boxoffice">
+            <div class="awards__wrapper wrapper">
+              <h1 class="awards__title">Awards</h1>
+              <h4 id="awards"></h4>
+            </div>
+            <div class="boxoffice__wrapper wrapper">
+              <h1 class="boxoffice__title">BoxOffice</h1>
+              <h4 id="boxoffice"></h4>
+            </div>
+          </div>
+        </div>
+        <div id="critics">
+          <h1 class="orange__text">Critics</h1>
+          <div class="critics__container">
+            <div class="critics__wrapper">
+              <img
+                class="critics__img"
+                src="./assets/mc_fb_og-1.png"
+                alt=""
+              />
+              <h1 class="metascore__total">
+                <span id="metascore"></span> Out of 100
+              </h1>
+            </div>
+            <div class="critics__wrapper">
+              <img class="critics__img" src="./assets/Imbd logo.png" alt="" />
+              <div class="imdb__container">
+                <i class="fa fa-star"></i>
+                <div class="rating__number">
+                  <h1 class="imdb__total">
+                    <span id="imdbRating"></span><span class="grey">/10</span>
+                  </h1>
+                  <p id="imdbVotes"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div id="searched__movie">
       <div class="container search__container">
         <div class="row row__search">
-          <span class="search__result--title">Search Result</span>
-          <div class="poster__container">
-            <div class="poster" onclick="toggleModal(); getMovieOne()">
-              <img
-                src="https://m.media-amazon.com/images/M/MV5BMDg2YzI0ODctYjliMy00NTU0LTkxODYtYTNkNjQwMzVmOTcxXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SX300.jpg"
-                alt=""
-                class="poster__img"
+          <div class="search__bar">
+            <label for="search">Search Result</label>
+            <form class="input__and__button--search">
+              <input
+                type="text"
+                id="search"
+                placeholder="Movie Title, ID, Genre"
+             
               />
-              <p class="movie__title">John Wick 3 "Parabellum"</p>
-              <p class="year">2019</p>
-            </div>
+              <button id="search__btn" type="button">
+                <i class="fa fa-video"></i>
+                <i class="fas fa-spinner"></i>
+              </button>
+            </form>
+          </div>
+          <div class="poster__container search__poster--container">
           </div>
         </div>
       </div>

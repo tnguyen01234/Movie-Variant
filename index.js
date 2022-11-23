@@ -3,7 +3,9 @@
 // All Poster Request http://img.omdbapi.com/?apikey=?
 // example API https:jsonplaceholder.typicode.com/users
 
-
+function search__input() {
+    window.location.href = `${window.location.origin}/search.html`
+}
 
 
 let isModalOpen = false;
@@ -17,8 +19,6 @@ function toggleModal() {
     isModalOpen = true;
     document.body.classList += " modal--open";
 }
-
-
 
 
 async function getMovieOne() {
