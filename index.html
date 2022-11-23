@@ -136,10 +136,19 @@
             FIND YOUR <span class="orange__text">FAVOURITE </span>MOVIE
           </h2>
           <div class="input__and__button">
-            <input type="text" placeholder="Movie Title, ID, Genre" onchange="onSearchChange(event)"/>
-            <button id="search__btn">
-              <i class="fa fa-video"></i>
-            </button>
+            <form class="input__and__button--search">
+              <input
+                type="text"
+                id="search"
+                placeholder="Movie Title, ID, Genre"
+              />
+              <button id="search__btn" type="submit" onclick="searchPage()">
+                <div class="btn__video">
+                  <i class="fa fa-video"></i>
+                </div>
+                <div class="btn__spinner"><i class="fas fa-spinner"></i></div>
+              </button>
+            </form>
           </div>
         </div>
       </div>

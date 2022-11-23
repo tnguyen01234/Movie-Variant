@@ -5,21 +5,46 @@
 
 const posterListEl = document.querySelector(' .poster__container');
 var input__enter = document.getElementById('search')
+let isModalOpen = false;
+const searchID = localStorage.getItem("searchID")
+
+async function renderPosts(searchID) {
+  const posts = await fetch (`https://www.omdbapi.com/?apikey=4148fa0f&s=${searchID}`)
+  const posterData = await posts.json();
+
+  posterListEl.innerHTML = posterData.Search.map(post => posterHTML(post)).join('');
+}
 
 
 
 document.getElementById('search__btn').onclick = async function (){
+  event.preventDefault()
+const video = document.querySelector('.btn__video')
+const spinner = document.querySelector('.btn__spinner')
+video.classList += " btn__video--invisible";
+spinner.classList += " btn__spinner--visible";
+
   var search = document.getElementById("search").value;
-  const posts = await fetch (`https://www.omdbapi.com/?apikey=4148fa0f&s=${search}`)
+  const posts = await fetch (`https://www.omdbapi.com/?apikey=4148fa0f&s=${search || searchID}`)
 const posterData = await posts.json();
 
+setTimeout(() => {
+  video.classList.remove("btn__video--invisible");
+spinner.classList.remove("btn__spinner--visible");
+  posterListEl.innerHTML = posterData.Search.map(post => posterHTML(post)).join('');
+  console.log(spinner)
+}, 1000);
 
+};
 
-
-posterListEl.innerHTML = posterData.Search.map(post => posterHTML(post)).join('');
-  console.log(search)
+function toggleModal() {
+  if(isModalOpen) {
+      isModalOpen = false;
+      return document.body.classList.remove("modal--open");
+  }
+  isModalOpen = true;
+  document.body.classList += " modal--open";
 }
-
 
 function posterHTML(post) {
   return `<div class="poster" onclick="toggleModal(); getMovie('${post.imdbID}')">
@@ -53,3 +78,4 @@ function posterHTML(post) {
   document.getElementById('poster').src = Poster;
   }
 
+  renderPosts(searchID) 

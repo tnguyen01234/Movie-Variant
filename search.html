@@ -10,7 +10,6 @@
       src="https://kit.fontawesome.com/c8e4d183c2.js"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js" defer></script>
     <script src="search.js" defer></script>
   </head>
   <body>
@@ -101,11 +100,7 @@
           <h1 class="orange__text">Critics</h1>
           <div class="critics__container">
             <div class="critics__wrapper">
-              <img
-                class="critics__img"
-                src="./assets/mc_fb_og-1.png"
-                alt=""
-              />
+              <img class="critics__img" src="./assets/mc_fb_og-1.png" alt="" />
               <h1 class="metascore__total">
                 <span id="metascore"></span> Out of 100
               </h1>
@@ -136,18 +131,19 @@
                 type="text"
                 id="search"
                 placeholder="Movie Title, ID, Genre"
-             
               />
-              <button id="search__btn" type="button">
-                <i class="fa fa-video"></i>
-                <i class="fas fa-spinner"></i>
+              <button id="search__btn" type="submit">
+                <div class="btn__video">
+                  <i class="fa fa-video"></i>
+                </div>
+                <div class="btn__spinner"><i class="fas fa-spinner"></i></div>
               </button>
             </form>
           </div>
-          <div class="poster__container search__poster--container">
-          </div>
+          <div class="poster__container search__poster--container"></div>
         </div>
       </div>
     </div>
   </body>
+  
 </html>

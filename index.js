@@ -2,13 +2,19 @@
 // All Data Requests http://www.omdbapi.com/?apikey=4148fa0f&
 // All Poster Request http://img.omdbapi.com/?apikey=?
 // example API https:jsonplaceholder.typicode.com/users
+let isModalOpen = false;
 
-function search__input() {
+
+function searchPage() {
+    var search = document.getElementById("search").value;
+    event.preventDefault()
+    localStorage.setItem("searchID", search)
+    console.log(search)
     window.location.href = `${window.location.origin}/search.html`
 }
 
 
-let isModalOpen = false;
+
 
 
 function toggleModal() {
