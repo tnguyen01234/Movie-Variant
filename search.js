@@ -4,35 +4,59 @@
 // example API https:jsonplaceholder.typicode.com/users
 
 const posterListEl = document.querySelector(' .poster__container');
-var input__enter = document.getElementById('search')
+const resultTitle = document.querySelector(' .result__title')
+
 let isModalOpen = false;
 const searchID = localStorage.getItem("searchID")
+const resultID = localStorage.getItem("result")
 
-async function renderPosts(searchID) {
+
+
+
+function homePage() {
+  window.location.href = `${window.location.origin}/index.html`
+}
+
+async function renderPosts(searchID, filter) {
   const posts = await fetch (`https://www.omdbapi.com/?apikey=4148fa0f&s=${searchID}`)
   const posterData = await posts.json();
-
+  
   posterListEl.innerHTML = posterData.Search.map(post => posterHTML(post)).join('');
 }
 
+renderPosts(searchID) 
+
+
+function filterMovies(event) {
+  renderPosts(event.target.value)
+  }
 
 
 document.getElementById('search__btn').onclick = async function (){
   event.preventDefault()
+  // Spinners
 const video = document.querySelector('.btn__video')
 const spinner = document.querySelector('.btn__spinner')
 video.classList += " btn__video--invisible";
 spinner.classList += " btn__spinner--visible";
+ // Spinners
 
-  var search = document.getElementById("search").value;
-  const posts = await fetch (`https://www.omdbapi.com/?apikey=4148fa0f&s=${search || searchID}`)
+//  Search 
+var search = document.getElementById("search").value;
+  const posts = await fetch (`https://www.omdbapi.com/?apikey=4148fa0f&s=${search}`)
 const posterData = await posts.json();
+//  Search 
+
+// Search Results
+resultTitle.innerHTML = "";
+// Search Results
 
 setTimeout(() => {
   video.classList.remove("btn__video--invisible");
 spinner.classList.remove("btn__spinner--visible");
+localStorage.setItem("result", search);
+resultTitle.innerHTML = resultID;
   posterListEl.innerHTML = posterData.Search.map(post => posterHTML(post)).join('');
-  console.log(spinner)
 }, 1000);
 
 };
@@ -78,4 +102,11 @@ function posterHTML(post) {
   document.getElementById('poster').src = Poster;
   }
 
-  renderPosts(searchID) 
+  function addResultTitle() {
+    resultTitle.innerHTML = searchID 
+  }
+  
+  addResultTitle()
+  
+
+  

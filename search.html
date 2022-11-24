@@ -14,7 +14,7 @@
   </head>
   <body>
     <nav>
-      <div class="logo__container">
+      <div class="logo__container" onclick="homePage()">
         <figure>
           <img class="mv__logo click" src="./assets/MV Logo Black.png" alt="" />
         </figure>
@@ -25,6 +25,7 @@
           <a
             href="#landing-page"
             class="nav__link--anchor link__hover--effect link__hover--effect--green"
+            onclick="homePage()"
             >Home</a
           >
         </li>
@@ -125,7 +126,7 @@
       <div class="container search__container">
         <div class="row row__search">
           <div class="search__bar">
-            <label for="search">Search Result</label>
+            <label for="search">Search Result:</label>
             <form class="input__and__button--search">
               <input
                 type="text"
@@ -140,6 +141,16 @@
               </button>
             </form>
           </div>
+          <div class="mid__section">
+          <div>
+            <h1>All results for: <span class="result__title"></span></h1>
+          </div>
+          <select id="filter" onchange="filterMovies(event)">
+          <option value="" disabled selected>Sort</option>
+          <option value="NEWEST_TO_OLDEST">Date, New to Old</option>
+          <option value="OLDEST_TO_NEWEST">Date, Old to New</option>
+        </select>
+      </div>
           <div class="poster__container search__poster--container"></div>
         </div>
       </div>

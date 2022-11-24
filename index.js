@@ -10,7 +10,16 @@ function searchPage() {
     event.preventDefault()
     localStorage.setItem("searchID", search)
     console.log(search)
-    window.location.href = `${window.location.origin}/search.html`
+    const video = document.querySelector('.btn__video')
+    const spinner = document.querySelector('.btn__spinner')
+    video.classList += " btn__video--invisible";
+    spinner.classList += " btn__spinner--visible";
+    setTimeout(() => {
+        video.classList.remove("btn__video--invisible");
+        spinner.classList.remove("btn__spinner--visible");
+        window.location.href = `${window.location.origin}/search.html`
+    }, 1000);
+
 }
 
 
