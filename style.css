@@ -38,8 +38,9 @@ section {
     transition: all 300ms ease;
 }
 
-.orange__text {
+.orange__text  {
     color: #FF6F61;
+    !important
 }
 
 
@@ -111,12 +112,10 @@ label {
     width: 100%;
 }
 
-#imdbID {
- 
-} 
 
-
-/* NAV */
+/*
+ NAV
+ */
 
 .mv__logo {
     filter: invert(79%) sepia(60%) saturate(5237%) hue-rotate(319deg) brightness(98%) contrast(109%);
@@ -648,7 +647,8 @@ margin: 0 12px;
 /* Search Page */
 
 .search__container {
-    margin-top: 115px;
+    height: 100vh;
+ padding-top: 140px;
     display: flex;
 }
 
@@ -679,3 +679,51 @@ margin: 0 12px;
     text-align: center;
     margin-bottom: 12px;
 }
+
+/* Dark  */
+
+.dark-theme section {
+    background-color: #242424;
+}
+
+.dark-theme nav {
+    background-color: #242424;
+    color: white;
+}
+
+.dark-theme .nav__link--anchor,
+.dark-theme .website__title,
+.dark-theme .secondary__title,
+.dark-theme .movie__title,
+.dark-theme .poster__year,
+.dark-theme .prop__btn,
+.dark-theme p,
+.dark-theme h4,
+.dark-theme #imdbRating,
+.dark-theme .grey,
+.dark-theme #imdbVotes,
+.dark-theme .all__result
+{
+    color: white;
+}
+
+.dark-theme .synopsis,
+.dark-theme .director__title,
+.dark-theme .actors__title,
+.dark-theme .awards__title,
+.dark-theme .boxoffice__title
+ {
+    color: #242424;
+}
+
+.dark-theme .fa-adjust,
+.dark-theme h3,
+.dark-theme label {
+    color: #FF6F61;
+}
+
+.dark-theme .modal__right {
+    background-color: #FF6F61;
+}
+
+

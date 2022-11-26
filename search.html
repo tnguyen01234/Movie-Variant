@@ -53,6 +53,7 @@
         </li>
       </ul>
     </nav>
+    <section>
     <div class="modal">
       <div class="modal__half modal__left">
         <div class="poster__wrapper">
@@ -143,18 +144,14 @@
           </div>
           <div class="mid__section">
           <div>
-            <h1>All results for: <span class="result__title"></span></h1>
+            <h1 class="all__result">All results for: <span class="result__title"></span></h1>
           </div>
-          <select id="filter" onchange="filterMovies(event)">
-          <option value="" disabled selected>Sort</option>
-          <option value="NEWEST_TO_OLDEST">Date, New to Old</option>
-          <option value="OLDEST_TO_NEWEST">Date, Old to New</option>
-        </select>
       </div>
           <div class="poster__container search__poster--container"></div>
         </div>
       </div>
     </div>
+  </section>
   </body>
   
 </html>

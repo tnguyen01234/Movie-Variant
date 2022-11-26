@@ -6,7 +6,9 @@
 const posterListEl = document.querySelector(' .poster__container');
 const resultTitle = document.querySelector(' .result__title')
 
+
 let isModalOpen = false;
+let contrastToggle = false;
 const searchID = localStorage.getItem("searchID")
 const resultID = localStorage.getItem("result")
 
@@ -17,7 +19,7 @@ function homePage() {
   window.location.href = `${window.location.origin}/index.html`
 }
 
-async function renderPosts(searchID, filter) {
+async function renderPosts(searchID) {
   const posts = await fetch (`https://www.omdbapi.com/?apikey=4148fa0f&s=${searchID}`)
   const posterData = await posts.json();
   
@@ -27,9 +29,6 @@ async function renderPosts(searchID, filter) {
 renderPosts(searchID) 
 
 
-function filterMovies(event) {
-  renderPosts(event.target.value)
-  }
 
 
 document.getElementById('search__btn').onclick = async function (){
@@ -107,6 +106,18 @@ function posterHTML(post) {
   }
   
   addResultTitle()
-  
 
-  
+  function toggleContrast() {
+    console.log("123")
+    contrastToggle = !contrastToggle;
+    if (contrastToggle) {
+        document.body.classList += " dark-theme"
+    }
+    else {
+        document.body.classList.remove("dark-theme")
+    }
+
+}
+
+// Device Compatability 
+

@@ -3,6 +3,7 @@
 // All Poster Request http://img.omdbapi.com/?apikey=?
 // example API https:jsonplaceholder.typicode.com/users
 let isModalOpen = false;
+let contrastToggle = false;
 
 
 function searchPage() {
@@ -23,6 +24,17 @@ function searchPage() {
 }
 
 
+function toggleContrast() {
+    console.log("123")
+    contrastToggle = !contrastToggle;
+    if (contrastToggle) {
+        document.body.classList += " dark-theme"
+    }
+    else {
+        document.body.classList.remove("dark-theme")
+    }
+
+}
 
 
 
