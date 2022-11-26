@@ -647,8 +647,8 @@ margin: 0 12px;
 /* Search Page */
 
 .search__container {
-    height: 100vh;
- padding-top: 140px;
+    height: 140vh;
+ padding-top: 170px;
     display: flex;
 }
 
